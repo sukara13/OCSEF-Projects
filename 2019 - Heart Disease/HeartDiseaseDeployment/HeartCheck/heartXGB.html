@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="UTF-8">
+    <title>Heart Disease Diagnosis</title>
+  </head>
+  <style>
+	.h1 {
+		font: 24px Arial;
+		background-color: #292929;
+        color: #ffffff;
+		text-align: center;
+        height: 50px;
+        margin-top: 0;
+        margin-bottom: 20px;
+        padding-top: 20px;
+	}
+
+    .divPage {
+		font: 15px Arial;
+        text-align: center;
+    }
+
+    .divCenter {
+	    display: inline-block;
+    }
+
+    .divTable {
+        display: table;
+        width: 280px;
+        margin-top: 10px;
+    }
+
+    .row {
+        display: table-row;
+    }
+
+    .cellLeft {
+        display: table-cell;
+        float: left;
+        padding-left: 4px;
+        padding-bottom: 4px;
+    }
+
+    .cellRight {
+        display: table-cell;
+        float: right;
+        padding-right: 4px;
+        padding-bottom: 4px;
+    }
+
+    .cellLabel {
+        display: table-cell;
+        float: left;
+        padding-left: 4px;
+        padding-bottom: 4px;
+        width: 60px;
+        text-align: right;
+    }
+
+	.button {
+		text-align:center;
+		width:200px;
+	}
+
+	.number {
+		color: black;
+        text-align: right;
+		width: 40px;
+		height: 16px;
+		border: 0.01em solid #A0A0A0;
+	}
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 3px;
+        text-align: left;
+    }
+  </style>
+  <body style="background-color:#00a2e8; margin:0;">
+	<h1 class="h1">Heart Disease Check</h1>
+    <div class="divPage">
+		<div class="divCenter">
+			<div class="row">
+				<div class="cellLeft">
+					<div class="divTable" style="border: 1px solid black; border-collapse: collapse; background-color:white">
+						<div class="row">
+							<div class="cellLeft" style="padding-top: 18px">
+								<div class="row">
+									<div class="cellLabel">cp</div>
+									<div class="cellLeft">
+										<select id="ddl_cp">
+											<option value="0" selected="selected">asymptomatic</option>
+											<option value="3">typical angina</option>
+											<option value="1">atypical angina</option>
+											<option value="2">non-anginal pain</option>
+										</select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="cellLabel">thalach</div>
+									<div class="cellLeft"><input id="txt_thalach" type="number" min="1" max="500" class="number" value="150"></div>
+								</div>
+								<div class="row">
+									<div class="cellLabel">exang</div>
+									<div class="cellLeft">
+										<select id="ddl_exang">
+											<option value="0" selected="selected">no</option>
+											<option value="1">yes</option>
+										</select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="cellLabel">oldpeak</div>
+									<div class="cellLeft"><input id="txt_oldpeak" type="number" step="0.1" min="0" max="10" class="number" value="2.3"></div>
+								</div>
+								<div class="row">
+									<div class="cellLabel">slope</div>
+									<div class="cellLeft">
+										<select id="ddl_slope">
+											<option value="0" selected="selected">downsloping</option>
+											<option value="1">flat</option>
+											<option value="2">upsloping</option>
+										</select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="cellLabel">ca</div>
+									<div class="cellLeft">
+										<select id="ddl_ca">
+											<option value="0" selected="selected">0</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">unknown</option>
+										</select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="cellLabel">thal</div>
+									<div class="cellLeft">
+										<select id="ddl_thal">
+											<option value="2" selected="selected">normal</option>
+											<option value="1">fixed defect</option>
+											<option value="3">reversible defect</option>
+											<option value="0">unknown</option>
+										</select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="cellLabel"></div>
+									<div class="cellLeft">
+										<button onclick="predict()">Predict</button>
+									</div>
+								</div>
+								<div class="row">
+									<div class="cellLabel">status:</div>
+									<div class="cellLeft">
+										<label id="lbl_status" style="color:Red"></label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="cellLabel">count:</div>
+									<div class="cellLeft">
+										<label id="lbl_count" style="color:Red"></label>
+									</div>
+								</div>
+								<hr style="margin-left:-4px; width:277px">
+								<div class="row">
+									<div class="cellLabel">actual</div>
+									<div class="cellLeft">
+										<select id="ddl_actual">
+											<option value="0" selected="selected">healthy</option>
+											<option value="1">sick</option>
+										</select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="cellLabel"></div>
+									<div class="cellLeft">
+										<button onclick="addToModel()">Add To Model</button>
+									</div>
+								</div>
+								<hr style="margin-left:-4px; width:277px">
+								<div class="row">
+									<div class="cellLabel"></div>
+									<div class="cellLeft">
+										<button onclick="resetModel()">Reset Model</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="cellLeft">
+					<div class="divTable">
+						<div style="background-color:whitesmoke; color:dimgray">
+							<table>
+								<tr>
+									<th>Attribute</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>cp</td>
+									<td>chest pain type</td>
+								</tr>
+								<tr>
+									<td>thalach</td>
+									<td>maximum heart rate achieved</td>
+								</tr>
+								<tr>
+									<td>exang</td>
+									<td>exercise induced angina</td>
+								</tr>
+								<tr>
+									<td>oldpeak</td>
+									<td>ST depression induced by exercise relative to rest</td>
+								</tr>
+								<tr>
+									<td>slope</td>
+									<td>the slope of the peak exercise ST segment</td>
+								</tr>
+								<tr>
+									<td>ca</td>
+									<td>number of major vessels colored by flouroscopy</td>
+								</tr>
+								<tr>
+									<td>thal</td>
+									<td>thallium stress test</td>
+								</tr>
+								<tr>
+									<td>prediction</td>
+									<td>diagnosis of angiographic heart disease status<br>
+										- sick: &gt; 50% diameter narrowing<br>
+										- healthy: &lt; 50% diameter narrowing</td>
+								</tr>
+							</table>
+						</div>
+					</div>    
+				</div>
+			</div>
+		</div>
+    </div>
+    <script>
+        const url='http://198.12.149.165:8080/heart';
+        const headers = {'Content-Type': 'application/json'};
+
+        function predict(){
+            let data = {oper: 'predict',
+                        cp: + ddl_cp.value,
+                        thalach: + txt_thalach.value,
+                        exang: + ddl_exang.value,
+                        oldpeak: + txt_oldpeak.value,
+                        slope: + ddl_slope.value,
+                        ca: + ddl_ca.value,
+                        thal: + ddl_thal.value};
+            let options = {method: 'POST',
+                           body: JSON.stringify(data),
+                           headers: headers};
+            fetch(url, options)
+              .then(function(response) { return response.json(); })
+              .then(function(json) {
+                let prediction = 'healthy';
+                if (json.pred == 1)
+                  prediction = 'sick';
+                let percentage = json.prob;
+                if (percentage < 0.5)
+                  percentage = 1 - percentage;
+                percentage = Math.round(percentage * 100);
+                document.getElementById('lbl_status').innerHTML = prediction + ' (' + percentage + '%)';
+                document.getElementById('lbl_count').innerHTML = json.count;
+              });
+		}
+
+        function addToModel(){
+            let data = {oper: 'addToModel',
+                        cp: + ddl_cp.value,
+                        thalach: + txt_thalach.value,
+                        exang: + ddl_exang.value,
+                        oldpeak: + txt_oldpeak.value,
+                        slope: + ddl_slope.value,
+                        ca: + ddl_ca.value,
+                        thal: + ddl_thal.value,
+                        target: + ddl_actual.value};
+            let options = {method: 'POST',
+                           body: JSON.stringify(data),
+                           headers: headers};
+            fetch(url, options)
+              .then(function(response) { return response.json(); })
+              .then(function(json) {
+                predict();
+              });
+		}
+
+        function resetModel(){
+            let data = {oper: 'resetModel'};
+            let options = {method: 'POST',
+                           body: JSON.stringify(data),
+                           headers: headers};
+            fetch(url, options)
+              .then(function(response) { return response.json(); })
+              .then(function(json) {
+                predict();
+              });
+		}
+    </script>
+  </body>
+</html>

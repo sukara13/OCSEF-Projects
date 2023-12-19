@@ -1,0 +1,45 @@
+Title
+Heart Disease Diagnosis via Efficient Machine Learning
+
+Problem
+Physicians have a hard time determining whether a patient’s heart is healthy or not while taking several factors into account. Can I help them improve their decision-making process by creating a machine learning model from other patients’ data, and using that model to predict the current patient’s health status?
+
+Hypothesis
+Develop a web application for physicians to predict a patient’s heart disease status by running a machine learning algorithm behind the scenes. Medical personnel can also add new patient data into the model to improve its accuracy over time. The tool can be used on any computer or mobile device.
+
+Materials
+• MacBook Pro by Apple
+• Heart Disease Data from the UCI ML Repository
+• Weka 3.8.3 by the University of Waikato, New Zealand
+• Penn Machine Learning Benchmarks (PMLB)
+• Visual Studio Code 1.30.2 by Microsoft
+• Anaconda Python 3.7
+• Python Flask 1.0.2
+• Scikit-learn 0.20.1
+• HTML5 and JavaScript
+
+Procedure
+• Download the heart disease dataset from the UCI Machine Learning Repository website, which contains data of 303 patients.
+• Read the Penn Machine Learning Benchmark (PMLB) research paper, and download the test data and benchmark reports.
+• Use the PMLB heart disease dataset since it is in a better format with nominal values instead of symbolic figures.
+• Install Weka to examine the heart disease data in a graphical user interface.
+• Select the most important attributes in Weka and create a new dataset with a subset of the original attributes.
+• Run the PMLB toolset to evaluate the performance of several machine learning algorithms and to identify the best parameter settings for each algorithm.
+• Install Anaconda3 that contains Python 3.7, Visual Studio Code, Flask, and Scikit-learn packages.
+• Develop my own application in Python to build a machine learning model from heart data and to predict the health status of new patients.
+• Create a web page in HTML5 and JavaScript, and a web service in Python Flask to communicate between the web page on the client device and the machine learning application on the server.
+
+Results
+• Selected 7 of the original 13 attributes in the heart disease dataset as the most important ones in Weka, and created a new dataset after this feature selection process.
+• Ran the PMLB toolset to compare the performance of Gradient Tree Boost, XGBoost, and Random Forest algorithms with 10-fold cross validation on the new dataset.
+• Picked XGBoost as the best performing algorithm with a balanced accuracy score of 86%.
+• Identified the XGBoost parameters (n_estimators=50, learning_rate=0.1, gamma=0.4, max_depth=3, subsample=0.2) for the highest accuracy.
+• Developed a machine learning program in Python to train a model and make predictions by using the new dataset and the XGBoost algorithm with the specified parameters.
+• Built a web service to let a web page communicate with the machine learning program on the server.
+• Created a web page in HTML and Javascript to let the user enter the patient data, to predict the health status, and to add the new patient data to the model to improve its performance over time.
+
+Conclusions
+• The feature selection process dropped the number of attributes from 13 to 7, and simplified the model as well as the user interface for the medical personnel to enter patient data.
+• The web application not only lets the medical personnel predict the health status of a new patient, but also lets them correct the prediction and add the new patient data into the model. This process will improve the accuracy of the model as it grows with more patient data over time.
+• This project provides the basic framework to run a machine learning program on a server and to communicate with it from a web page through a web service in the middle. Even though it is specific to heart disease data, it can easily be modified to handle any dataset by replacing the training file and the accompanying user interface items.
+• Please feel free to run the application on any computer or mobile device at http://heartdx.weebly.com.

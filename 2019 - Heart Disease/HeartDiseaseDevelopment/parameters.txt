@@ -1,0 +1,151 @@
+Timing
+------
+start: 2019-03-07 09:22:55.020881
+
+heart-c-select  GradientBoostingClassifier      n_estimators=10,min_impurity_decrease=0.00025,max_features=0.1,learning_rate=0.5,loss=exponential,random_state=324089     0.8448844884488449      0.8418457437947693      0.8391963109354414
+end: 2019-03-07 11:20:56.653932
+
+heart-c-select  XGBClassifier   n_estimators=50,learning_rate=0.1,gamma=0.4,max_depth=3,subsample=0.2,seed=324089,nthread=1     0.8613861386138614      0.8590510366826155        0.8567193675889329
+end: 2019-03-07 15:25:23.267962
+
+heart-c-select  RandomForestClassifier  n_estimators=100,min_impurity_decrease=0.0032500000000000003,max_features=sqrt,criterion=gini,random_state=324089       0.8514851485148515        0.8485757121439281      0.8458498023715415
+2019-03-07 16:06:36.790132
+
+MacOS
+-----
+dataset    heart-c-select
+classifier XGBClassifier
+parameters n_estimators=50,learning_rate=0.1,gamma=0.1,max_depth=3,subsample=0.4,seed=324089,nthread=1               
+accuracy   0.858085808580858
+fscore     0.8558180711558679
+overall    0.8536890645586298
+
+Windows
+-------
+dataset    heart-c-select
+classifier XGBClassifier
+parameters n_estimators=50,learning_rate=0.1,gamma=0.4,max_depth=3,subsample=0.2,seed=324089,nthread=1
+accuracy   0.8613861386138614
+fscore     0.8590510366826155
+overall    0.8567193675889329
+
+dataset    heart-c-select
+classifier ExtraTreesClassifier
+parameters n_estimators=100,min_impurity_decrease=0.00425,max_features=None,criterion=gini,random_state=324089
+accuracy   0.8514851485148515
+fscore     0.8498099906372198
+overall    0.8488142292490118
+
+dataset    heart-c-select
+classifier RandomForestClassifier
+parameters n_estimators=100,min_impurity_decrease=0.0032500000000000003,max_features=sqrt,criterion=gini,random_state=324089
+accuracy   0.8514851485148515
+fscore     0.8485757121439281
+overall    0.8458498023715415
+
+dataset    heart-c-select
+classifier GradientBoostingClassifier
+parameters n_estimators=10,min_impurity_decrease=0.00025,max_features=0.1,learning_rate=0.5,loss=exponential,random_state=324089
+accuracy   0.8448844884488449
+fscore     0.8418457437947693
+overall    0.8391963109354414
+
+PMLB heart-c
+------------
+dataset    heart-c
+classifier GaussianNB
+parameters NaN
+accuracy   0.818482
+fscore     0.816434
+overall    0.815547
+
+dataset    heart-c
+classifier ExtraTreesClassifier
+parameters n_estimators=10,min_impurity_decrease=0.003,max_features=sqrt,criterion=gini,random_state=324089
+accuracy   0.871287
+fscore     0.869004
+overall    0.866403
+
+dataset    heart-c
+classifier PassiveAggressiveClassifier
+parameters C=0.001,loss=squared_hinge,fit_intercept=True,random_state=324089
+accuracy   0.838284
+fscore     0.833757
+overall    0.830171
+
+dataset    heart-c
+classifier BernoulliNB
+parameters alpha=10.0,fit_prior=True,binarize=0.1
+accuracy   0.848185
+fscore     0.845353
+overall    0.842819
+
+dataset    heart-c
+classifier RandomForestClassifier
+parameters n_estimators=10,min_impurity_decrease=0.015,max_features=0.5,criterion=gini,random_state=324089
+accuracy   0.848185
+fscore     0.845627
+overall    0.843412
+
+dataset    heart-c
+classifier SVC
+parameters C=0.01,gamma=0.1,kernel=poly,degree=3,coef0=100.0,random_state=324089
+accuracy   0.848185
+fscore     0.845353
+overall    0.842819
+
+dataset    heart-c
+classifier MultinomialNB
+parameters alpha=5.0,fit_prior=False
+accuracy   0.80198
+fscore     0.798287
+overall    0.796245
+
+dataset    heart-c
+classifier DecisionTreeClassifier
+parameters min_impurity_decrease=0.004,max_features=log2,criterion=gini,random_state=324089
+accuracy   0.805281
+fscore     0.803353
+overall    0.802833
+
+dataset    heart-c
+classifier GradientBoostingClassifier
+parameters n_estimators=100,min_impurity_decrease=0.35000000000000003,max_features=0.1,learning_rate=0.1,loss=deviance,random_state=324089
+accuracy   0.861386
+fscore     0.859288
+overall    0.857312
+
+dataset    heart-c
+classifier AdaBoostClassifier
+parameters learning_rate=0.01,n_estimators=500,random_state=324089
+accuracy   0.834983
+fscore     0.831592
+overall    0.82892
+
+dataset    heart-c
+classifier LogisticRegression
+parameters C=2.5,penalty=l1,fit_intercept=True,dual=False,random_state=324089
+accuracy   0.834983
+fscore     0.830552
+overall    0.827141
+
+dataset    heart-c
+classifier KNeighborsClassifier
+parameters n_neighbors=5,weights=uniform
+accuracy   0.825083
+fscore     0.821315
+overall    0.818643
+
+dataset    heart-c
+classifier XGBClassifier
+parameters n_estimators=50,learning_rate=0.1,gamma=0.25,max_depth=1,subsample=0.6000000000000001,seed=324089,nthread=1
+accuracy   0.854785
+fscore     0.852587
+overall    0.850659
+
+dataset    heart-c
+classifier LinearSVC
+parameters C=1.0,penalty=l1,fit_intercept=True,dual=False,random_state=324089
+accuracy   0.834983
+fscore     0.830552
+overall    0.827141
