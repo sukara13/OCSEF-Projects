@@ -1,0 +1,21 @@
+A79734
+A79761
+E53264
+(213)740-1101
+CSEF@usc.edu
+
+Title: Proof of Pappus Theorem with Circle Inversion by Developing an Open Source Software Application
+
+Category Reason: Circle inversion and Pappus chain are studied in geometry as part of mathematics.
+
+Objective/Goal: Develop an open-source software application to simulate circle inversion and prove Pappus' theorem.
+
+Materials & Methods: MacBook Pro to develop a web page in HTML5 and JavaScript. Wrote the source code in Brackets, an open-source text editor, to invert a point, circle, and Pappus chain. Tested and debugged the software in Safari.
+
+Results: A web page that displays three tabs to invert a point, to invert a circle, and to create a Pappus chain, invert its parts, and show homothety. The user can either load a predefined template, or enter custom values to run their own inversions.
+
+Conclusion/Discussion: I created a web page with graphics features to simulate circle inversion. I proved Pappus theorem' by visually showing similarity between circles in the Pappus chain and their inversions. It runs in the latest browsers on all computers and mobile devices. I share this tool as an open-source software application with anyone interested in math, and specifically in circle inversion and Pappus chain. Please feel free to use the application and get the source code from my web page at http://sukarablog.weebly.com.
+
+Summary Statement: I developed a web application to prove the Pappus theorem by simulating circle inversion.
+
+Help Received: I designed, developed, and tested the program myself.

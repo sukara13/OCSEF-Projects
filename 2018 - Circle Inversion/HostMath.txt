@@ -1,0 +1,33 @@
+\frac{OP}{r}=\frac{r}{OP'}
+OP.OP'=r^{2}
+\alpha=\frac{r^2}{(x-x_{0})^2+(y-y_{0})^2}
+x'=x_{0}+\alpha(x-x_{0})
+y'=y_{0}+\alpha(y-y_{0})
+s=\frac{r_{0}^{2}}{(x-x_{0})^{2}+(y-y_{0})^{2}-r^{2}}
+x'=x_{0}+s(x-x_{0})
+y'=y_{0}+s(y-y_{0})
+r'=|s|r
+(x-a)^2 + (y-b)^2 = r_{0}^2
+(x-c)^2 + (y-d)^2 = r_{1}^2
+D=\sqrt{(c-a)^2+(d-b)^2}
+r_{0}+r_{1}>D
+|r_{0}-r_{1}|<D
+y=\frac{a-c}{d-b}x+\frac{(r_{0}^2-r_{1}^2)+(c^2-a^2)+(d^2-b^2)}{2(d-b)}
+x_{1,2}=\frac{a+c}{2}+\frac{(c-a)(r_{0}^2-r_{1}^2)}{2D^2}\pm2\frac{b-d}{D^2}\partial
+y_{1,2}=\frac{b+d}{2}+\frac{(d-b)(r_{0}^2-r_{1}^2)}{2D^2}\mp2\frac{a-c}{D^2}\partial
+\partial=\frac{1}{4}\sqrt{(D+r_{0}+r_{1})(D+r_{0}-r_{1})(D-r_{0}+r_{1})(-D+r_{0}+r_{1})}
+x_{n}=\frac{r(1+r)}{2[n^2(1-r)^2+r]}
+y_{n}=\frac{nr(1-r)}{n^2(1-r)^2+r}
+r_{n}=\frac{r(1-r)}{2[n^2(1-r)^2+r]}
+\frac{h'_{n}}{d'_{n}}=n
+\frac{h_{n}}{d_{n}}=\frac{h'_{n}}{d'_{n}}
+\frac{h_{n}}{d_{n}}=n
+x_{d}=a+2(c-a)
+y_{d}=b+2(d-b)
+\alpha=\frac{r_{0}^2}{(x_{d}-a)^2+(y_{d}-b)^2}
+x_{1}=a+\alpha(x_{d}-a)
+y_{1}=b+\alpha(y_{d}-b)
+m_{d}=\frac{d-b}{c-a}
+m_{i}=\frac{-1}{m_{d}}
+y_{1}=m_{i}x_{1}+b_{i}
+b_{i}=y_{1}-m_{i}x_{1}
